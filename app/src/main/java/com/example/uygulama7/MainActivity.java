@@ -17,13 +17,17 @@ public class MainActivity extends AppCompatActivity {
         EditText editTextyas=findViewById(R.id.editTextyas);
         Button buttonkaydet=findViewById(R.id.buttonkaydet);
         TextView textViewsonuc=findViewById(R.id.textViewsonuc);
+        EditText maass=findViewById(R.id.editTextNumber);
         buttonkaydet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int yas =Integer.parseInt(editTextyas.getText().toString());
+                int maas=Integer.parseInt(maass.getText().toString());
                 personel persanel =new personel();
                 persanel.setYas(yas);
-                textViewsonuc.setText(Integer.toString(persanel.getYas()));
+                persanel.setMaas(maas);
+                textViewsonuc.setText("Yaş:"+persanel.getYas()+" Maaş:"+persanel.getMaas());
+
             }
         });
     }
